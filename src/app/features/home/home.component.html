@@ -24,7 +24,8 @@
                     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title> First panel
-                                <mat-slide-toggle class="example-margin" [checked]="check1"></mat-slide-toggle>
+                                <mat-slide-toggle class="example-margin" [checked]="check1"
+                                    (click)="onToggleClick($event)"></mat-slide-toggle>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p>I'm visible </p>
@@ -73,38 +74,32 @@
 
         <!-- outer chat display -->
         <div class="chat-display-outer-container">
-            <div class="chat-display-inner-container">
-                Hi, I am a chatbot. How can I help you today?
+            <div class="chat-display-scrollable-container">
+                <div class="individual-container">
+                    <!-- <app-individual-msg></app-individual-msg> -->
+                    @for (item of messageData; track item.timestamp) {
+                    <app-individual-msg [message]="item"></app-individual-msg>
+                    } @empty {
+                    <li>There are no items.</li>
+                    }
+                </div>
             </div>
+
+            <!-- Attach file button -->
+            <button mat-flat-button class="attachfile-btn">
+                <mat-icon>attach_file</mat-icon>
+                Attach file</button>
         </div>
 
         <!-- chat input area -->
-        <div class="chat-input-container">
-            <!-- <form class="chat-form" (ngSubmit)="sendMessage()">
-                <mat-form-field class="full-width">
-                    <textarea matInput placeholder="Type your message here..." [(ngModel)]="message" rows="1"
-                        matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="5"
-                        name="userMessage"></textarea>
-                </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">Send</button>
-            </form> -->
-            <!-- <form class="chat-form" (ngSubmit)="sendMessage()">
-                <mat-form-field class="full-width">
-                    <textarea matInput placeholder="Type your message here..." [(ngModel)]="message" matTextareaAutosize
-                        matAutosizeMinRows="1" matAutosizeMaxRows="5" name="userMessage"></textarea>
-                </mat-form-field>
-                <button mat-button color="primary" type="submit">Send</button>
-            </form> -->
+        <form class="chat-input-container" (ngSubmit)="sendMessage()">
+            <textarea class="chat-textarea" placeholder="Type your message here..." [(ngModel)]="message"
+                name="userMessage" #myTextarea (input)="resizeTextarea($event)"></textarea>
+            <button mat-mini-fab aria-label="Example icon button with a menu icon" class="circular-button">
+                <mat-icon>send</mat-icon>
+            </button>
+        </form>
 
-            <form class="chat-form" (ngSubmit)="sendMessage()">
-                <textarea placeholder="Type your message here..." [(ngModel)]="message" name="userMessage"></textarea>
-                <button mat-button color="primary" type="submit">
-                    <mat-icon>send</mat-icon>
-                </button>
-            </form>
-
-
-        </div>
     </div>
 
     <!-- Right Sidebar -->

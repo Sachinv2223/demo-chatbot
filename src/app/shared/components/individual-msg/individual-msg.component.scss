@@ -1,0 +1,78 @@
+// 1rem = 16px
+.flex {
+    display: flex;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.max-w-70 {
+    max-width: 70%;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+/* styles.scss */
+.self-end {
+    background-color: #3b82f6; // Equivalent to bg-blue-500
+    color: #ffffff; // Equivalent to text-white
+    border-bottom-right-radius: 0; // Equivalent to rounded-br-none
+}
+
+.other-end {
+    background-color: #e5e7eb; // Equivalent to bg-gray-200
+    color: #1f2937; // Equivalent to text-gray-800
+    border-bottom-left-radius: 0; // Equivalent to rounded-bl-none
+}
+
+.text-md {
+    font-size: medium;
+}
+
+.text-sm {
+    font-size: small;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.subscript-time {
+    font-size: 0.75rem; // Equivalent to text-xs
+    display: block;
+}
+
+.text-blue-100 {
+    color: #dbeafe;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
+
+.my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.msg-outer-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+}

@@ -1,6 +1,16 @@
 // variables
 $bg-color-light-grey: #efefef;
 
+button.mdc-button {
+    font-size: medium;
+    color: black;
+    --mat-button-ripple-color: rgba(44, 44, 44, 0.12);
+    --mat-text-button-state-layer-color: #4f4f4f;
+    --mat-text-button-disabled-state-layer-color: #4f4f4f;
+    --mat-text-button-ripple-color: rgba(44, 44, 44, 0.12);
+    --mat-text-button-hover-state-layer-color: #4f4f4f;
+}
+
 .main {
     display: flex;
     justify-content: center;
@@ -11,8 +21,7 @@ $bg-color-light-grey: #efefef;
     gap: 12px;
 
     .left-sidebar {
-        flex: 1;
-        // background-color: #fafafa;
+        flex: 2;
         background-color: inherit;
         padding: 16px;
         display: flex;
@@ -39,8 +48,8 @@ $bg-color-light-grey: #efefef;
         }
 
         mat-divider {
-            height: 1px;
-            background-color: #ababab;
+            border-top-color: #cbcbcb;
+            border-top-width: 1.5px;
             margin: 16px 0;
         }
 
@@ -83,17 +92,11 @@ $bg-color-light-grey: #efefef;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 8px;
-
-            button.mdc-button {
-                font-size: medium;
-                color: black;
-            }
         }
     }
 
     .chat-window {
-        flex: 3;
+        flex: 7;
         background-color: #d2d2d2;
         padding: 16px;
         border-radius: 10px;
@@ -101,42 +104,72 @@ $bg-color-light-grey: #efefef;
         flex-direction: column;
 
         .chat-display-outer-container {
-            background-color: #8b8b8b;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             min-height: 0;
+            position: relative;
 
-            .chat-display-inner-container {
+            .chat-display-scrollable-container {
                 flex-grow: 1;
                 overflow-y: auto;
+                padding-top: 44px;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
                 display: flex;
+                flex-direction: column-reverse;
+
+                .individual-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
+            }
+
+            button.attachfile-btn {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                color: white;
+                background-color: #075a9e;
             }
         }
 
         .chat-input-container {
+            margin-top: 16px;
             width: 100%;
+            background-color: white;
+            padding: 8px 8px 8px 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
 
-            form.chat-form {
-
-                textarea {
-                    border: none;
-                    border-radius: 20px;
-                    background-color: #ffffff;
-                    font-size: medium;
-                    height: auto;
-                    outline: none;
-                    padding: 16px;
-                    width: 100%;
-                    resize: none;
-                    overflow: hidden;
-                }
+            textarea.chat-textarea {
+                flex-grow: 1;
+                font-size: 16px;
+                height: 24px;
+                border: none;
+                outline: none;
+                resize: none;
+                overflow: hidden;
             }
+
+            .mat-mdc-mini-fab.circular-button {
+                box-shadow: none;
+                color: white;
+                background-color: #075a9e;
+
+                --mdc-fab-small-container-color: #d4d4ff;
+                --mat-fab-small-foreground-color: #ffffff;
+                --mat-fab-small-state-layer-color: #fdfdfd;
+                --mat-fab-small-ripple-color: rgba(255, 255, 255, 0.3);
+            }
+
         }
     }
 
     .right-sidebar {
-        flex: 2;
+        flex: 3;
         background-color: #075a9e;
         padding: 16px;
     }
@@ -144,4 +177,18 @@ $bg-color-light-grey: #efefef;
 
 .full-height {
     height: 100%;
+}
+
+.circular-button {
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-button mat-icon {
+    font-size: 24px;
 }

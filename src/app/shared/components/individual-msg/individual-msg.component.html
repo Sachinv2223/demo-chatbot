@@ -1,0 +1,11 @@
+<!-- outer-container -->
+<div class="msg-outer-container" [ngClass]="message.sender==='self' ? 'justify-end' : 'justify-start' ">
+
+    <div class="max-w-70 px-4 py-2 rounded-lg" [ngClass]="message.sender==='self' ? 'self-end' : 'other-end' ">
+
+        <div className="text-md my-0">{{message.content}}</div>
+        <span class="subscript-time" [ngClass]="message.sender === 'self' ? 'text-blue-100' : 'text-gray-500'">
+            {{ message.timestamp | date:'shortTime' }}
+        </span>
+    </div>
+</div>
