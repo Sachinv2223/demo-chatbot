@@ -1,0 +1,112 @@
+<div class="main">
+
+    <!-- Left Sidebar -->
+    <div class="left-sidebar full-height">
+
+        <!-- Logo and Title -->
+        <div class="title-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="Logo"
+                class="title-logo">
+            <div class="title-name">Clinical AI BOT</div>
+        </div>
+
+        <!-- grey divider -->
+        <!-- <div class="grey-divider"></div> -->
+        <mat-divider></mat-divider>
+
+
+        <!-- Menu Items with flex grow -->
+        <div class="sidebar-menu">
+            <div class="sidebar-overflow-container">
+
+                <!-- 1st menu item -->
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title> First panel
+                                <mat-slide-toggle class="example-margin" [checked]="check1"></mat-slide-toggle>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>I'm visible </p>
+                        <p>Cause I'm open </p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <!-- 2st menu item -->
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title> Second panel </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>I'm visible </p>
+                        <p>Cause I'm open </p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+
+        <!-- bottom settings & profile buttons -->
+        <div class="botton-container">
+
+            <button mat-button>
+                <mat-icon>notifications</mat-icon>
+                Notification
+            </button>
+
+            <button mat-button>
+                <mat-icon>settings</mat-icon>
+                Settings
+            </button>
+
+            <button mat-button>
+                <mat-icon>account_circle</mat-icon>
+                Profile
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Chat Window -->
+    <div class="chat-window full-height">
+
+        <!-- outer chat display -->
+        <div class="chat-display-outer-container">
+            <div class="chat-display-inner-container">
+                Hi, I am a chatbot. How can I help you today?
+            </div>
+        </div>
+
+        <!-- chat input area -->
+        <div class="chat-input-container">
+            <!-- <form class="chat-form" (ngSubmit)="sendMessage()">
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="Type your message here..." [(ngModel)]="message" rows="1"
+                        matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="5"
+                        name="userMessage"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Send</button>
+            </form> -->
+            <!-- <form class="chat-form" (ngSubmit)="sendMessage()">
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="Type your message here..." [(ngModel)]="message" matTextareaAutosize
+                        matAutosizeMinRows="1" matAutosizeMaxRows="5" name="userMessage"></textarea>
+                </mat-form-field>
+                <button mat-button color="primary" type="submit">Send</button>
+            </form> -->
+
+            <form class="chat-form" (ngSubmit)="sendMessage()">
+                <textarea placeholder="Type your message here..." [(ngModel)]="message" name="userMessage"></textarea>
+                <button mat-button color="primary" type="submit">
+                    <mat-icon>send</mat-icon>
+                </button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="right-sidebar full-height">right-sidebar</div>
+</div>
