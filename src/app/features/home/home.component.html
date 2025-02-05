@@ -24,8 +24,13 @@
                     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title> First panel
-                                <mat-slide-toggle class="example-margin" [checked]="check1"
-                                    (click)="onToggleClick($event)"></mat-slide-toggle>
+                                <!-- <mat-slide-toggle class="example-margin" [checked]="check1"
+                                    (click)="onToggleClick($event)"></mat-slide-toggle> -->
+                                <!-- home.component.html -->
+                                <div class="slide-toggle-container">
+                                    <mat-slide-toggle class="example-margin" [checked]="check1"
+                                        (click)="onToggleClick($event)"></mat-slide-toggle>
+                                </div>
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <p>I'm visible </p>

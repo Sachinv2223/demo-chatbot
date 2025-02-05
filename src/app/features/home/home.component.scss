@@ -71,17 +71,14 @@ button.mdc-button {
                 mat-accordion {
                     width: 100%;
 
-                    mat-slide-toggle {
-                        margin-left: auto;
-                    }
-
                     mat-expansion-panel {
                         box-shadow: none;
                         background-color: inherit;
 
-                        // &:hover {
-                        //     background: var(--mat-expansion-header-hover-state-layer-color);
-                        // }
+                        .mat-expansion-panel-header-title {
+                            margin: 0;
+                        }
+
                     }
                 }
             }
@@ -109,6 +106,8 @@ button.mdc-button {
             flex-direction: column;
             min-height: 0;
             position: relative;
+            overflow: hidden;
+            padding-top: 48px;
 
             .chat-display-scrollable-container {
                 flex-grow: 1;
@@ -191,4 +190,21 @@ button.mdc-button {
 
 .circular-button mat-icon {
     font-size: 24px;
+}
+
+/* home.component.css */
+.slide-toggle-container {
+    margin-left: auto;
+    display: inline-block;
+    transform: scale(0.75);
+    /* Adjust the scale factor as needed */
+    transform-origin: left center;
+    /* Ensure the scaling is centered */
+}
+
+.mat-accent.mat-mdc-slide-toggle {
+    --mdc-switch-selected-track-color: #075a9e;
+    --mdc-switch-selected-focus-track-color: #075a9e;
+    --mdc-switch-selected-hover-track-color: #075a9e;
+    --mdc-switch-selected-pressed-track-color: #075a9e;
 }
